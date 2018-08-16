@@ -32,8 +32,8 @@ export class NewTenantsComponent implements OnInit
    closeResult: string;
    units: Unit;
    
-   private tenantsUrl = 'http://localhost:8100/tenants/';
-   private unitsUrl = 'http://localhost:8100/unit/';
+   private tenantsUrl = 'https://kejaserver.herokuapp.com/tenants/';
+   private unitsUrl   = 'https://kejaserver.herokuapp.com/unit/';
    
    constructor(private fb: FormBuilder, 
                private route: ActivatedRoute,

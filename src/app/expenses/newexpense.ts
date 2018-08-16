@@ -23,7 +23,7 @@ export class NewExpensesComponent implements OnInit
 {
    @Input() id: any;
    @Output('update') change: EventEmitter<any> = new EventEmitter<any>();
-   
+   modalRef: NgbModalRef;
    expenseForm: FormGroup;
    closeResult: string;
    private expUrl = 'https://kejaserver.herokuapp.com/expense';
@@ -31,7 +31,6 @@ export class NewExpensesComponent implements OnInit
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,
                     private route: ActivatedRoute,
-                    private modalRef: NgbModalRef,
                      private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)
    {

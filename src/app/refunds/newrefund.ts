@@ -27,7 +27,7 @@ export class NewRefundComponent implements OnInit
 {
    @Input() id: any;
    @Output('update') change: EventEmitter<any> = new EventEmitter<any>();
-    
+   modalRef: NgbModalRef;
    refundForm: FormGroup;
    closeResult: string;
    tenants: Tenant[];
@@ -39,7 +39,6 @@ export class NewRefundComponent implements OnInit
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,
-                    private modalRef: NgbModalRef,
                     private route: ActivatedRoute,
                      private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)

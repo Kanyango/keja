@@ -37,7 +37,7 @@ export class UpdatePaymentsComponent implements OnInit
    closeResult: string;
    units: Unit;
    payment: Payments;
-   
+   modalRef: NgbModalRef;   
    private payUrl     = 'https://kejaserver.herokuapp.com/payments';
    private unitsUrl   = 'https://kejaserver.herokuapp.com/unit/';
    private tenantsUrl = 'https://kejaserver.herokuapp.com/alltenants/';
@@ -46,7 +46,6 @@ export class UpdatePaymentsComponent implements OnInit
                 private ngbDateParserFormatter: NgbDateParserFormatter,
                 private modalService: NgbModal, 
                 private http: HttpClient,
-                private modalRef: NgbModalRef,
                  private route: ActivatedRoute,
                  private location: Location,
                  private httpService: HttpServices)

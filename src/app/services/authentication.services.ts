@@ -13,14 +13,14 @@ export class AuthenticationService {
  
     login(username: string, password: string) {
         return this.http.post(this.loginUrl, { username: username, password: password })
-            .map((user) => {
+            .map((user: any) => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
                     
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('keja-app', user.token);
                 }
-                return token;
+                return user;
             });
     }
  

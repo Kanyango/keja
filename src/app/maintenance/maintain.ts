@@ -21,7 +21,7 @@ const httpOptions = {
 export class MaintenanceComponent implements OnInit
 {
      id = '';
-     private maintainUrl = 'http://localhost:8100/maintain';
+     private maintainUrl = 'https://kejaserver.herokuapp.com/maintain';
      maintains: Maintain[];
      
      constructor(private http: HttpClient,  private router: Router,

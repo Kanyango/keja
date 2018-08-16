@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit
     {
         //console.log(this.registerForm.value);
         
-        this.http.post(this.registerUrl, this.user, this.httpOptions)
+        this.http.post(this.registerUrl, this.user, httpOptions)
             .subscribe(
                 data => {
                     // set success message and pass true paramater to persist the message after redirecting to the login page

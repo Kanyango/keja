@@ -23,7 +23,7 @@ export class NewMaintainComponent
 {
    @Input() id: any;
    @Output('update') change: EventEmitter<any> = new EventEmitter<any>();
-   
+   modalRef: NgbModalRef;
    maintainForm: FormGroup;
    closeResult: string;
    private maintainUrl = 'https://kejaserver.herokuapp.com/maintain';
@@ -31,7 +31,6 @@ export class NewMaintainComponent
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,
                     private route: ActivatedRoute,
-                    private modalRef: NgbModalRef,
                      private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)
    {

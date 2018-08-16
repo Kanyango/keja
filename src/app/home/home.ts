@@ -40,13 +40,13 @@ export class HomeComponent implements OnInit
     totunits = 0;
     totalexpenses = 0;
     
-    private apartsUrl  = 'http://localhost:8100/unit';
-    private payUrl     = 'http://localhost:8100/allpayments'; 
-    private tenantsUrl = 'http://localhost:8100/alltenants/'; 
-    private expUrl     = 'http://localhost:8100/allexpense/';
-    private chargesUrl = 'http://localhost:8100/charges/'; 
-    private maintainUrl = 'http://localhost:8100/maintain';
-    private refundUrl = 'http://localhost:8100/refund';
+    private apartsUrl   = 'https://kejaserver.herokuapp.com/unit';
+    private payUrl      = 'https://kejaserver.herokuapp.com/allpayments'; 
+    private tenantsUrl  = 'https://kejaserver.herokuapp.com/alltenants/'; 
+    private expUrl      = 'https://kejaserver.herokuapp.com/allexpense/';
+    private chargesUrl  = 'https://kejaserver.herokuapp.com/charges/'; 
+    private maintainUrl = 'https://kejaserver.herokuapp.com/maintain';
+    private refundUrl   = 'https://kejaserver.herokuapp.com/refund';
     
     constructor(private httpService: HttpServices,
                 private router: Router,

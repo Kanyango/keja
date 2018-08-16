@@ -19,7 +19,7 @@ const httpOptions = {
 export class ApartmentsComponent implements OnInit
 {
      apartments: any = [];
-     private apartsUrl = 'http://localhost:8100/unit';
+     private apartsUrl = 'https://kejaserver.herokuapp.com/unit';
      constructor(private http: HttpClient, private httpService: HttpServices){}
      
     ngOnInit()

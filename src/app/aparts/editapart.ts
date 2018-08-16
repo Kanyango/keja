@@ -19,6 +19,7 @@ import { Charges } from './charges';
 export class EditApartComponent implements OnInit
 { 
   editApartForm: FormGroup;
+  private modalRef: NgbModalRef;
   
   @Input() one: any;
   @Input() id: any;
@@ -28,7 +29,7 @@ export class EditApartComponent implements OnInit
   editApart = 'https://kejaserver.herokuapp.com/unititle/';
   
   constructor(private modalService: NgbModal, private httpService: HttpServices,
-             private fb: FormBuilder, private modalRef: NgbModalRef) {}
+             private fb: FormBuilder) {}
 
   ngOnInit()
   {

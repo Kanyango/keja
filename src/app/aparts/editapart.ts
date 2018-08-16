@@ -11,6 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { UnitModel } from '../units/UnitModel';
 import { Charges } from './charges';
 
+private modalRef: NgbModalRef;
 
 @Component({
     selector: 'editapart-component',
@@ -29,7 +30,7 @@ export class EditApartComponent implements OnInit
   editApart = 'https://kejaserver.herokuapp.com/unititle/';
   
   constructor(private modalService: NgbModal, private httpService: HttpServices,
-            private modalRef: NgbModalRef, private fb: FormBuilder) {}
+             private fb: FormBuilder) {}
 
   ngOnInit()
   {

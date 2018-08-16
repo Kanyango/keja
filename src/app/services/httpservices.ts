@@ -16,11 +16,11 @@ export class HttpServices {
     constructor(private http: HttpClient) { }
  
     getAllAparts() {
-        return this.http.get('http://localhost:8100/unit');
+        return this.http.get('https://kejaserver.herokuapp.com/unit');
     }
     
     createAparts(formvals) {
-        return this.http.post('http://localhost:8100/unit', formvals, httpOptions );
+        return this.http.post('https://kejaserver.herokuapp.com/unit', formvals, httpOptions );
     }
     
     editApart(url: string, one: any)

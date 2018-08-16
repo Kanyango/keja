@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit
                     
                     for(let i = 0; i < data.length; i++)
                     {   
-                      let paymonth =  data[i].month;
+                      let paymonth =  data[i].paymonth;
                        
                        const [year, month, day] = paymonth.split("-");
                        let neewdate =  new Date(parseInt(year), parseInt(month) - 1, parseInt(day));

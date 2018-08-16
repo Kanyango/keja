@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Injectable()
 export class AuthenticationService {
     
-    private loginUrl = 'http://localhost:8100/login';
+    private loginUrl = 'https://kejaserver.herokuapp.com/login';
     
     constructor(private http: HttpClient, private router: Router) { }
  

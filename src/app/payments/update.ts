@@ -38,9 +38,9 @@ export class UpdatePaymentsComponent implements OnInit
    units: Unit;
    payment: Payments;
    
-   private payUrl = 'http://localhost:8100/payments';
-   private unitsUrl = 'http://localhost:8100/unit/';
-   private tenantsUrl = 'http://localhost:8100/alltenants/';
+   private payUrl     = 'https://kejaserver.herokuapp.com/payments';
+   private unitsUrl   = 'https://kejaserver.herokuapp.com/unit/';
+   private tenantsUrl = 'https://kejaserver.herokuapp.com/alltenants/';
    
    constructor(private fb: FormBuilder, 
                 private ngbDateParserFormatter: NgbDateParserFormatter,

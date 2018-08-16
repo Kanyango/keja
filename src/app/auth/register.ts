@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit
     model: any = {};
    //@LocalStorage('username') public username:string; 
     loading = false;
-    private registerUrl = 'http://localhost:8100/register/';
+    private registerUrl = 'https://kejaserver.herokuapp.com/register/';
  
     constructor(private router: Router, private fb: FormBuilder, private http: HttpClient,
                  private route: ActivatedRoute,

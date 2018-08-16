@@ -25,7 +25,7 @@ export class NewChargesComponent implements OnInit
 {
    @Input() id: any;
    @Output('update') change: EventEmitter<any> = new EventEmitter<any>();
-   
+   modalRef: NgbModalRef;
    chargesForm: FormGroup;
    closeResult: string;
    units: Unit[];
@@ -36,7 +36,7 @@ export class NewChargesComponent implements OnInit
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,
                     private route: ActivatedRoute,
-                    private modalRef: NgbModalRef,
+                   
                      private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)
    {

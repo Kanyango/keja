@@ -20,7 +20,7 @@ import { Payments } from '../payments/paymodel';
 export class TenantsComponent implements OnInit
 {
     id = '';
-    private tenantsUrl = 'http://localhost:8100/alltenants/'; 
+    private tenantsUrl = 'https://kejaserver.herokuapp.com/alltenants/'; 
     tenants: Tenant[];
     
     constructor(private fb: FormBuilder, 

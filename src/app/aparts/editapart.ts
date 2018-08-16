@@ -11,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { UnitModel } from '../units/UnitModel';
 import { Charges } from './charges';
 
-private modalRef: NgbModalRef;
+const modalRef: NgbModalRef;
 
 @Component({
     selector: 'editapart-component',

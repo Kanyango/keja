@@ -81,7 +81,7 @@ export class UnitModalComponent implements OnInit
                      this.pays = data;
                      for(let i = 0; i < this.pays.length; i++)
                         {
-                            if(this.pays[i].house_no == this.unit.unit_no && tenant.move_in < this.pays[i].month)
+                            if(this.pays[i].house_no == this.unit.unit_no && tenant.move_in < this.pays[i].paymonth)
                             {
                                 this.mypays.push(this.pays[i]);
                                 

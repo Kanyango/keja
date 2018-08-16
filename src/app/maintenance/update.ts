@@ -24,6 +24,7 @@ export class UpdateMaintainComponent implements OnInit
    @Input() id: any;
    @Output('editMaint') change: EventEmitter<any> = new EventEmitter<any>();
    @Input() one;
+   modalRef: NgbModalRef;
    upmaintainForm: FormGroup;
    closeResult: string;
    private maintainUrl = 'https://kejaserver.herokuapp.com/maintain';
@@ -31,7 +32,6 @@ export class UpdateMaintainComponent implements OnInit
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,
                     private route: ActivatedRoute,
-                    private modalRef: NgbModalRef,
                      private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)
    {

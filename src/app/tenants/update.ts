@@ -31,12 +31,11 @@ export class UpdateTenantsComponent implements OnInit
    updateTenantForm: FormGroup;
    closeResult: string;
    units: Unit;
-   
+   modalRef: NgbModalRef;
    private tenantsUrl = 'https://kejaserver.herokuapp.com/tenants/';
    private unitsUrl   = 'https://kejaserver.herokuapp.com/unit/';
    
    constructor(private fb: FormBuilder, 
-                private modalRef: NgbModalRef,
                private route: ActivatedRoute,
                private ngbDateParserFormatter: NgbDateParserFormatter,
                private modalService: NgbModal, 

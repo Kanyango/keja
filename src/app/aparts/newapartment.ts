@@ -29,7 +29,7 @@ export class NewApartmentComponent
    apartment = {title: '', _id: ''};
    closeResult: string;
    
-   private apartsUrl = 'http://localhost:8100/unit';  // URL to web api
+   private apartsUrl = 'https://kejaserver.herokuapp.com/unit';  // URL to web api
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, private http: HttpClient,
                 private modalRef: NgbModalRef,

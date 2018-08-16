@@ -24,7 +24,7 @@ const httpOptions = {
 export class RefundsComponent implements OnInit
 {
      id = '';
-     private maintainUrl = 'http://localhost:8100/refund';
+     private maintainUrl = 'https://kejaserver.herokuapp.com/refund';
      refunds: Refund[];
      
      constructor(private http: HttpClient,  private router: Router,

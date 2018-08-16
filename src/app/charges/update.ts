@@ -29,14 +29,13 @@ export class UpdateChargesComponent implements OnInit
    updatechargesForm: FormGroup;
    closeResult: string;
    units: Unit[];
-   
+   modalRef: NgbModalRef;
    private chargeUrl = 'https://kejaserver.herokuapp.com/charges';
    private unitsUrl = 'https://kejaserver.herokuapp.com/unit/';
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,
                     private route: ActivatedRoute,
-                    private modalRef: NgbModalRef,
                      private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)
    {

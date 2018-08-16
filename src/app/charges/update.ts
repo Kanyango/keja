@@ -30,8 +30,8 @@ export class UpdateChargesComponent implements OnInit
    closeResult: string;
    units: Unit[];
    
-   private chargeUrl = 'http://localhost:8100/charges';
-   private unitsUrl = 'http://localhost:8100/unit/';
+   private chargeUrl = 'https://kejaserver.herokuapp.com/charges';
+   private unitsUrl = 'https://kejaserver.herokuapp.com/unit/';
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,

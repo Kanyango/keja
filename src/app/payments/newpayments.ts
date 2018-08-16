@@ -128,9 +128,9 @@ export class NewPaymentsComponent implements OnInit
        this.payment.balance = rent - parseInt(this.payment.amount_paid);
         
         
-        let ngbDate: any = this.payment.month;
+        let ngbDate: any = this.payment.paymonth;
         let myDate = this.ngbDateParserFormatter.format(ngbDate);
-        this.payment.month = myDate;
+        this.payment.paymonth = myDate;
         
         //this.http.post(this.payUrl, this.payment, httpOptions)
         this.httpService.createPayments(this.payUrl, this.payment)

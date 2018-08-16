@@ -26,7 +26,7 @@ export class NewExpensesComponent implements OnInit
    
    expenseForm: FormGroup;
    closeResult: string;
-   private expUrl = 'http://localhost:8100/expense';
+   private expUrl = 'https://kejaserver.herokuapp.com/expense';
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,

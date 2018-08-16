@@ -21,7 +21,7 @@ const httpOptions = {
 export class ExpensesComponent implements OnInit
 {
     id = '';
-     private expUrl = 'http://localhost:8100/allexpense';
+     private expUrl = 'https://kejaserver.herokuapp.com/allexpense';
      expenses: Expense[];
      
      constructor(private http: HttpClient,  private router: Router,

@@ -34,13 +34,14 @@ export class UpdateRefundComponent implements OnInit
    closeResult: string;
    tenants: Tenant[];
    units: Unit;
+   modalRef: NgbModalRef;
+  
    private refundUrl  = 'https://kejaserver.herokuapp.com/refund';
    private tenantsUrl = 'https://kejaserver.herokuapp.com/alltenants/'; 
    private unitsUrl   = 'https://kejaserver.herokuapp.com/unit/';
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                private http: HttpClient,
-               private modalRef: NgbModalRef,
                private route: ActivatedRoute,
                private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)

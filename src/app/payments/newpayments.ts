@@ -34,7 +34,7 @@ export class NewPaymentsComponent implements OnInit
    paymentsForm: FormGroup;
    closeResult: string;
    units: Unit;
-   payment: Payments;
+   payment: Payments = {};
    
    private payUrl     = 'https://kejaserver.herokuapp.com/payments';
    private unitsUrl   = 'https://kejaserver.herokuapp.com/unit/';

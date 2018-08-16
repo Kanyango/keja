@@ -27,7 +27,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let rent of payments">
-                                <th>{{ rent.month | date: 'mediumDate'}}</th>
+                                <th>{{ rent.paymonth | date: 'mediumDate'}}</th>
                                 <th>{{ rent.house_no }}</th>
                                 <th>{{ rent.tenant_name }}</th>
                                 <th>{{ rent.amount_paid }}</th>

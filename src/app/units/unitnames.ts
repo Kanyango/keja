@@ -33,8 +33,8 @@ export class UnitsNamesComponent implements OnInit
               'o', 'p', 'q' , 'r',  's', 't', 'u',
               'v', 'w', 'x' ,'y', ', z'];
               
-    public assetsUrl =  'http://localhost:8100/unitexcel/';
-    public unitsUrl  =  'http://localhost:8100/unit/';
+    public assetsUrl =  'https://kejaserver.herokuapp.com/unitexcel/';
+    public unitsUrl  =  'https://kejaserver.herokuapp.com/unit/';
         
        constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,

@@ -26,14 +26,14 @@ export class UpadateExpensesComponent implements OnInit
    @Input() id: any;
    @Output('edit') change: EventEmitter<any> = new EventEmitter<any>();
    @Input() one: Expense;
-   
+   modalRef: NgbModalRef;
+  
    updatExpenseForm: FormGroup;
    closeResult: string;
    private expUrl = 'https://kejaserver.herokuapp.com/expense';
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,
-                    private modalRef: NgbModalRef,
                     private route: ActivatedRoute,
                      private httpService: HttpServices,
                     private ngbDateParserFormatter: NgbDateParserFormatter)

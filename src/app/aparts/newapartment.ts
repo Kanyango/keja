@@ -28,11 +28,11 @@ export class NewApartmentComponent
    apartments = [];
    apartment = {title: '', _id: ''};
    closeResult: string;
-   
+   modalRef: NgbModalRef;
+  
    private apartsUrl = 'https://kejaserver.herokuapp.com/unit';  // URL to web api
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, private http: HttpClient,
-                private modalRef: NgbModalRef,
                 private httpService: HttpServices)
    {
      this.creatApartment();

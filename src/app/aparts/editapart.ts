@@ -25,8 +25,8 @@ export class EditApartComponent implements OnInit
   @Input() id: any;
   closeResult: string;
 
-  apartUrl = 'http://localhost:8100/unit/';
-  editApart = 'http://localhost:8100/unititle/';
+  apartUrl = 'https://kejaserver.herokuapp.com/unit/';
+  editApart = 'https://kejaserver.herokuapp.com/unititle/';
   
   constructor(private modalService: NgbModal, private httpService: HttpServices,
             private modalRef: NgbModalRef, private fb: FormBuilder) {}

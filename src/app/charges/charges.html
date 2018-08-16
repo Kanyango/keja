@@ -1,0 +1,54 @@
+<br>
+<br>
+<div class="container">
+    <property-component></property-component>
+    <div class="row">
+        <div class="col-md-12">
+          <newcharge-component [id]="id" (update)="updateVals($event)"></newcharge-component>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Billings</h5>
+                    
+                    <div class="form-group" style="width: 300px;">
+                            <label>Search</label>
+                            <input class="form-control" type="text" [(ngModel)]="term">
+                    </div>
+                    <div class="table-responsive">
+                        
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>House No</th>
+                                    <th>Amount</th>
+                                    <th>Paid</th>
+                                    <th>Balance</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let one of charges |filter:term">
+                                    <th>{{ one.month | date: 'mediumDate' }}</th>
+                                    <th>{{ one.description }}</th>
+                                    <th>{{ one.house }}</th>
+                                    <th>KES {{ one.amount }}</th>
+                                    <th>KES {{ one.paid  }}</th>
+                                    <th>KES {{ one.balance  }}</th>
+                                    <th><updatecharge-component [id]="id" [one]="one"></updatecharge-component></th>
+                                    
+<!--                                    <th><billingtenant-component [one]="one" [id]="id"></billingtenant-component></th>-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

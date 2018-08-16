@@ -1,0 +1,84 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Update Rent Payment</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
+      
+        
+            <div class="form-group">
+                <label for="dateOfBirth">Rent date</label>
+                <div class="input-group">
+                  <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" 
+                         name="month" ngbDatepicker #dp="ngbDatepicker" [(ngModel)]="payment.month">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+                      <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                    </button>
+                  </div>
+                </div>
+            </div>
+        
+<!--
+        <div class="form-group">
+            <label for="">Billing Description</label>
+            <input type="text" class="form-control" formControlName="title">
+            <select class="form-control" formControlName="title">
+                <option value="rent">Rent</option>
+                <option value="water">Water</option>
+                <option value="electricity">Electricity</option>
+                <option value="garbage">Garbage Collection</option>
+            </select>
+        </div>
+-->
+        
+        <div class="form-group">
+            <label for="">House no</label>
+<!--            <input type="text" class="form-control" formControlName="house_no">-->
+            <select class="form-control" [(ngModel)]="payment.house_no" name="house_no">
+                <option *ngFor="let one of units.unitnames" value="{{ one.unit }}">{{ one.unit }}</option>
+            </select>
+        </div>
+        
+<!--
+        <div class="form-group">
+            <label for="">Amount to Bill</label>
+            <input type="text" class="form-control" formControlName="amount">
+        </div>
+-->
+        
+        <div class="form-group">
+            <label for="">Amount paid </label>
+            <input type="text" name="amount_paid" class="form-control" [(ngModel)]="payment.amount_paid">
+        </div>
+        
+<!--
+        <div class="form-group">
+            <label for="">balance</label>
+            <input type="text" name="balance" class="form-control" [(ngModel)]="payment.balance ">
+        </div>
+-->
+        
+        
+    
+<!--
+        <div class="form-group">
+            <label for="">Expense date</label>
+            <input type="text" class="form-control" formControlName="expense_date">
+        </div>
+-->
+        <button class="btn btn-lg btn-outline-success float-right" type="submit" >
+            save
+        </button>
+    </form>
+      
+  </div>
+  <div class="modal-footer">
+<!--    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>-->
+  </div>
+</ng-template>
+
+<button class="btn btn-md btn-outline-primary float-right" (click)="open(content)">make rent payment</button>

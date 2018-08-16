@@ -1,0 +1,55 @@
+<br>
+<br>
+<div class="container">
+    <property-component></property-component>
+    <div class="row">
+        <div class="col-md-12">
+            <newpayments-component [id]="id" (update)="updateVals($event)"></newpayments-component>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Rent collection Report</h5>
+                    <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Date Payment</th>
+                                <th>House</th>
+                                <th>Tenant</th>
+                                <th>Amount</th>
+                                <th>Balance</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let rent of payments">
+                                <th>{{ rent.month | date: 'mediumDate'}}</th>
+                                <th>{{ rent.house_no }}</th>
+                                <th>{{ rent.tenant_name }}</th>
+                                <th>{{ rent.amount_paid }}</th>
+                                <th>{{ rent.balance }}</th>
+                                <th><updaterent-component [one]="rent" (edit)="updateRent($event)"></updaterent-component></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+<!--
+                    <div class="list-group">
+                        <a *ngFor="let one of payments"  class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h5 class="mb-1">{{ one.title }}</h5>
+                            </div>
+                            <p class="mb-1">KES {{ one.amount }}</p>
+                              <p class="mb-1">Paid on {{ one.month | date: 'mediumDate' }}</p>
+                          </a>
+                    </div>
+-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

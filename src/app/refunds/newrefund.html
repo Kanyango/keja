@@ -1,0 +1,62 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create Refund</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="refundForm" (ngSubmit)="onSubmit()">
+      
+        <div class="form-group">
+            <label for="">House No</label>
+            <select type="text" class="form-control" formControlName="house_no">
+                <option *ngFor="let one of units.unitnames" value="{{ one.unit }}">{{one.unit}}</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="">Refund Amount</label>
+            <input type="text" class="form-control" formControlName="refund_amount">
+        </div>
+
+        <div class="form-group">
+            <label for="">Refund Method</label>
+            <select type="text" class="form-control" formControlName="refund_method">
+                <option value="cash">Cash</option>
+                <option value="mobile_money">Mobile Money</option>
+                <option value="bank">Bank Deposit</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+        <label for="dateOfBirth">Refund Date</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd"
+                 formControlName="refund_date" name="dp" ngbDatepicker #dp="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+      </div>
+        
+<!--
+        <div class="form-group">
+            <label for="">Expense date</label>
+            <input type="text" class="form-control" formControlName="expense_date">
+        </div>
+-->
+        <button class="btn btn-lg btn-outline-success float-right" type="submit" [disabled]="!refundForm.valid">
+            save
+        </button>
+    </form>
+      
+  </div>
+  <div class="modal-footer">
+<!--    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>-->
+  </div>
+</ng-template>
+
+<button class="btn btn-md btn-outline-primary float-right" (click)="open(content)">add refund</button>

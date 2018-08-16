@@ -1,0 +1,46 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Register and get started</h5>
+                    <hr>
+<!--                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">-->
+                    <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+                        
+                        <div class="form-group">
+                            <label>email</label>
+                            <input type="text" class="form-control" name="username" [(ngModel)]="user.username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Phone</label>
+                            <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="user.password"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label>Retype Password</label>
+                            <input type="password" class="form-control" validateEqual="password"
+                                   name="confirmPassword" [(ngModel)]="user.confirmPassword"
+                            reverse="false" #confirmPassword="ngModel" requireds>
+                        </div>
+                        <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)" class="text-danger">
+                            Password mismatch
+                          </small>
+                        <br>
+                        <button type="submit" class="btn btn-lg btn-block btn-success" [disabled]="!f.valid"> register </button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <a routerLink="/login" class="badge badge-primary"> already have an account click here to login </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

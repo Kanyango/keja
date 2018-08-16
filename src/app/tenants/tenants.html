@@ -1,0 +1,59 @@
+<br>
+<br>
+<div class="container">
+    <property-component></property-component>
+    <div class="row">
+        <div class="col-md-12">
+           <newtenant-component [id]="id" (update)="updateVals($event)"></newtenant-component>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Move In</th>
+                                    <th>House no</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let one of tenants">
+                                    <th>{{ one.move_in | date: 'mediumDate' }}</th>
+                                    <th>{{ one.house_no }}</th>
+                                    <th>{{ one.tenant_name }}</th>
+                                    <th>{{ one.tenant_phone }}</th>
+                                    <th><uptenant-component [one]="one" (editRent)="updateRent($event)"></uptenant-component><button class="btn btn-danger">deactivate</button></th>
+<!--                                    <th><billingtenant-component [one]="one" [id]="id"></billingtenant-component></th>-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+<!--
+                <div class="card-body">
+                    <h5 class="card-title">Tenants list</h5>
+                    <hr>
+                    <div class="list-group">
+                        <a *ngFor="let one of tenants"  class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h3 class="mb-1">{{ one.tenant_name }}</h3>
+                            </div>
+                            
+                            <h5>House no: {{ one.house_no }}</h5>
+                            <p class="mb-1">Phone {{ one.tenant_phone }}</p>
+                              <p class="mb-1">Date moved in {{ one.move_in | date: 'mediumDate' }}</p> 
+                        </a>
+                    </div>
+                </div>
+-->
+            </div>
+        </div>
+    </div>
+</div>

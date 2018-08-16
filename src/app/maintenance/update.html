@@ -1,0 +1,64 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Maintenance Card</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="upmaintainForm" (ngSubmit)="onSubmit()">
+      
+        <div class="form-group">
+            <label for="">Description name</label>
+            <input type="text" class="form-control" formControlName="description">
+        </div>
+        
+        <div class="form-group">
+            <label for="">Total Cost</label>
+            <input type="text" class="form-control" formControlName="total_cost">
+        </div>
+
+        
+        <div class="form-group">
+        <label for="dateOfBirth">Start Date</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd"
+                 formControlName="start_date" name="dp2" ngbDatepicker #dp2="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="dp2.toggle()" type="button">
+              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+      </div>
+        <div class="form-group">
+        <label for="dateOfBirth">End Date</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd"
+                 formControlName="end_date" name="dp" ngbDatepicker #dp="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+      </div>
+        
+<!--
+        <div class="form-group">
+            <label for="">Expense date</label>
+            <input type="text" class="form-control" formControlName="expense_date">
+        </div>
+-->
+        <button class="btn btn-lg btn-outline-success float-right" type="submit" [disabled]="!upmaintainForm.valid">
+            save
+        </button>
+    </form>
+      
+  </div>
+  <div class="modal-footer">
+<!--    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>-->
+  </div>
+</ng-template>
+
+<button class="btn btn-md btn-outline-warning float-right" (click)="open(content)"><i class="far fa-edit"></i></button>

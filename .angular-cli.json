@@ -3,6 +3,15 @@
   "project": {
     "name": "keja"
   },
+    "architect": {
+    "build": {
+      "options": {
+        "scripts": [
+        "./node_modules/echarts/dist/echarts.min.js"
+        ]
+      }
+    }
+  },
   "apps": [
     {
       "root": "src",

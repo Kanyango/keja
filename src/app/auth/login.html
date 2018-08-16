@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Login and get started</h5>
+                    <hr>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <label for="">Username</label>
+                            <input type="text" class="form-control" formControlName="username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" class="form-control" formControlName="password">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-lg btn-block btn-success" [disabled]="!loginForm.valid"> login </button>
+                    </form>
+<!--                    <button id="googleBtn" class="btn btn-lg btn-danger" type="button">Get Started</button>-->
+                </div>
+                <div class="card-footer">
+                    <a routerLink="/register" class="badge badge-warning"> dont have an account click here to register </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

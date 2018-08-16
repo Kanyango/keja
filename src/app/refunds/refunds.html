@@ -1,0 +1,50 @@
+<br>
+<br>
+
+<div class="container">
+    <property-component></property-component>
+    <div class="row">
+        <div class="col-md-12">
+<!--            <button class="btn btn-primary float-right" type="button">add expenses</button>-->
+            <newrefunds-component [id]="id" (update)="updateVals($event)"></newrefunds-component>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"> Refunds </h5>
+                    
+                
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>House No</th>
+                                    <th>Amount</th>
+                                    <th>Method</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let one of refunds">
+                                    <th>{{ one.refund_date | date: 'mediumDate' }}</th>
+                                    <th>{{ one.house_no }}</th>
+                                    <th>KES {{ one.refund_amount }}</th>
+                                    <th>{{ one.refund_method  }}</th>
+                                    <th><updaterefunds-component [id]="id" [one]="one" (editRefund)="updateRefund($event)">
+                                        </updaterefunds-component>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

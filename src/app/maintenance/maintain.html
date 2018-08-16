@@ -1,0 +1,49 @@
+<br>
+<br>
+
+<div class="container">
+    <property-component></property-component>
+    <div class="row">
+        <div class="col-md-12">
+<!--            <button class="btn btn-primary float-right" type="button">add expenses</button>-->
+            <newmaintain-component [id]="id" (update)="updateVals($event)"></newmaintain-component>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"> Maintenance </h5>
+                    <hr>
+                    <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Total Cost</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let one of maintains">
+                                    <th>{{ one.description }}</th>
+                                    <th>KES {{ one.total_cost }}</th>
+                                    <th>{{ one.start_date | date: 'mediumDate'  }}</th>
+                                    <th>{{ one.end_date | date: 'mediumDate'  }}</th>
+                                    <th><upwmaintain-component [one]="one" (editMaint)="updateMaint($event)"></upwmaintain-component></th>
+<!--                                    <th><billingtenant-component [one]="one" [id]="id"></billingtenant-component></th>-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

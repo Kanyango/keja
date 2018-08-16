@@ -1,0 +1,57 @@
+.navbar-brand
+{
+    font-family: 'Arvo', serif;
+    font-size: 32px !important;
+    color: white !important;
+}
+.navbar li a, .navbar li a:visited {
+    color: #fff !important;
+}
+
+.navbar li a:hover, .navbar li a:active {
+    color: #fff !important;
+}
+.jumbotron
+{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #34ADFF;
+  background-image: -webkit-linear-gradient(30deg, #34ADFF 45%, #4CBFFF 45%);
+  min-height: 100%;
+}
+.lead
+{
+    font-size: 28px !important;
+    font-style: italic;
+    font-weight: bold !important;
+    letter-spacing: .2em;
+}
+.btn-fb
+{
+    color: white;
+    width: 25%;
+    font-size: 32px !important;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: 	#25852f;
+}
+#uza-header
+{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.extraAttr
+{
+    border: solid; 
+    border-radius: 20px; 
+    border-width: 1px; 
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+}
+
+/*
+.one{
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #004E95 50%);
+  min-height: 500px;
+}*/

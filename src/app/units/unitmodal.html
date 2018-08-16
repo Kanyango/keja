@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+<!--                <h6 *ngIf="tenant !=  ">Current tenant: {{ tenant.tenant_name }}, Mobile No {{ tenant.tenant_phone }}, </h6>-->
+
+                  <h5>Payments</h5>
+                  <hr>
+                    <div class="list-group">
+                                    <a *ngFor="let one of mypays"  class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                          <h5 class="mb-1">{{ one.title }}</h5>
+                                        </div>
+                                        <p class="mb-1">KES {{ one.amount }}</p>
+                                          <p class="mb-1">Paid on {{ one.month | date: 'mediumDate' }}</p>
+                                      </a>
+                        </div>
+
+            </div>
+
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+

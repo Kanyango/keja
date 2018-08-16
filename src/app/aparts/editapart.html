@@ -1,0 +1,67 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit aparment {{ one.title }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="editApartForm" (ngSubmit)="onSave()" novalidate>
+        
+          <div class="form-group">
+            <label for="">Apartment name</label>
+            <input type="text" class="form-control" formControlName="title" name="title">
+           </div>
+          
+          <button class="btn btn-primary float-left" 
+                                type="button" (click)="addUnit()">
+                            add monthly charges
+                            &nbsp;
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <br>
+                        <br>
+        <div formArrayName="charges" class="well well-lg">
+                            <div *ngFor="let charge of charges.controls; let i=index" [formGroupName]="i"
+                                 style="border: solid; border-width: 1px; border-radius: 15px; padding: 20px;
+                                        margin-bottom: 10px;">
+                                <div class="form-group" style="display: inline-block;" >
+                                    <label>Description</label>
+                                    <input class="form-control" formControlName="description" name='description' >
+                                </div>
+                                <div class="form-group" style="display: inline-block;">
+                                    <label>Amount</label>
+                                    <input type="text" class="form-control" formControlName="amount" name="amount" >
+                                </div>
+                                
+                                <div style="display: inline-block;">
+                                    <button class="btn btn-danger" 
+                                        type="submit" (click)="removeUnit(i)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                </div>
+                                
+                            </div>
+                                
+                        </div>
+          <button class="btn btn-lg btn-outline-success" type="submit" [disabled]="!editApartForm.valid" >update</button>
+          
+      </form>
+    
+<!--
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Recipient's username"
+                 [(ngModel)]="one.title" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" id="button-addon2" (click)="onSave()">update</button>
+          </div>
+        </div>
+-->
+    
+  </div>
+  <div class="modal-footer">
+<!--    <button type="button" class="btn btn-outline-dark" (click)="onSave()">Save</button>-->
+  </div>
+</ng-template>
+
+<button class="btn btn-primary" (click)="open(content)"><i class="far fa-edit"></i></button>

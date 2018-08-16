@@ -1,0 +1,59 @@
+<br>
+<br>
+
+<div class="container">
+    <property-component></property-component>
+    <div class="row">
+        <div class="col-md-12">
+<!--            <button class="btn btn-primary float-right" type="button">add expenses</button>-->
+            <newexpenses-component [id]="id" (update)="updateVals($event)"></newexpenses-component>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"> Expenses </h5>
+                    <hr>
+                     <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Title</th>
+                                    <th>Amount</th>
+                                    <th>Paid To</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let one of expenses">
+                                    <th>{{ one.expense_date | date: 'mediumDate' }}</th>
+                                    <th>{{ one.title }}</th>
+                                    <th>KES {{ one.amount }}</th>
+                                    <th>{{ one.paid_to  }}</th>
+                                    <th><update-component [one]="one" (edit)="updateOne($event)"></update-component></th>
+<!--                                    <th><billingtenant-component [one]="one" [id]="id"></billingtenant-component></th>-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+<!--
+                    <div class="list-group">
+                        <a *ngFor="let one of expenses"  class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h5 class="mb-1">{{ one.title }}</h5>
+                            </div>
+                            <p class="mb-1">KES {{ one.amount }}</p>
+                              <p class="mb-1">Paid on {{ one.expense_date | date: 'mediumDate' }}</p>
+                              <p class="mb-1">Paid to. {{ one.paid_to }}</p>
+                          </a>
+                    </div>
+-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

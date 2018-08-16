@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" href="#">Keja</a>
+</nav>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+           <newapartment-component (updateList)="updateAparts($event)"></newapartment-component>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"> My Apartments </h5>
+                    <hr>
+                    <div class="list-group">
+                        <a *ngFor="let one of apartments" 
+                           
+                              class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              
+                              <p class="mb-1">{{ one.title  }}</p>
+                                
+                                <div class="float-right">
+                                    <a class="btn btn-info" routerLink="/dash/{{ one._id }}/home/{{ one._id }}" >
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                                
+                                    <a class="btn btn-success" routerLink="/dash/{{ one._id  }}/unitnames/{{ one._id }}" >
+                                     <i class="fas fa-plus"></i></a>
+                                    
+                                    <editapart-component [one]="one"></editapart-component>
+                                   
+                                 
+                                </div>
+                                
+                                
+<!--                              <small>Expense cost</small>-->
+                            </div>
+                            
+<!--
+                            <p class="mb-1">
+                            
+                            </p>
+-->
+<!--                            <small>Paid to. Date</small>-->
+                          </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-primary" routerLink="/apartments"><i class="fas fa-chevron-left"></i>&nbsp; my properties</a>
+            
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{ apartment.title }}</h3>
+           
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class='row'>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Rent collection</h4>
+                    <hr>
+                 <div style="background-color: #0ABF57; color: #fff; padding: 20px; border-radius: 20px;">
+                    <h5 *ngIf="total_rent > 0">Expected Rent KSH {{ total_rent }}</h5>
+                    </div>
+                    <br>
+                    <div style="background-color: #5A5CE8; color: #fff; padding: 20px; border-radius: 20px;">
+                        <h5 *ngIf="rent_clts > 0">Collected Rent KSH {{ rent_clts }}</h5>
+                    </div>
+                    <br>
+                    <div style="background-color: #FF2B31; color: #fff; padding: 20px; border-radius: 20px;">
+                        <h5 *ngIf="rent_clts > 0">Outstanding rent {{ total_rent - rent_clts }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Vacancies</h3>
+                    
+                    <h2 class="display-2" *ngIf="tentact > 0">{{ totunits - tentact }}</h2>
+                </div>
+            </div>
+        </div>
+        
+         <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Other Charges</h4>
+                    <br>
+                    <h4 *ngFor="let one of charges">{{ one.description }} <br>
+                         KES {{ one.amount }} </h4>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <br>
+    <br>
+    <div class="row">
+       
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Expenses</h4>
+                    
+                    <h2 class="display-4" *ngIf="totalexpenses > 0" >Ksh {{ totalexpenses }}</h2>
+                    <div *ngIf="option != ''" echarts [options]="option" style="margin-left: 10px;  width: 300px; height: 300px">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Maintenance</h4>
+                    
+                    <h2 class="display-4" *ngIf="tot_maintain > 0" >Ksh {{ tot_maintain }}</h2>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Deposit Refunds</h4>
+                    
+                    <h2 class="display-4" *ngIf="tot_refunds > 0" >Ksh {{ tot_refunds }}</h2>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<br>
+<br>

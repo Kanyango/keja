@@ -26,7 +26,7 @@ export class NewMaintainComponent
    
    maintainForm: FormGroup;
    closeResult: string;
-   private maintainUrl = 'http://localhost:8100/maintain';
+   private maintainUrl = 'https://kejaserver.herokuapp.com/maintain';
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,

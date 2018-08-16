@@ -29,6 +29,7 @@ export class NewPaymentsComponent implements OnInit
    @Output('update') change: EventEmitter<any> = new EventEmitter<any>();
    @Input() id: any;
    tenants: Tenant[];
+   modalRef: NgbModalRef;
    
    paymentsForm: FormGroup;
    closeResult: string;
@@ -43,7 +44,6 @@ export class NewPaymentsComponent implements OnInit
                 private ngbDateParserFormatter: NgbDateParserFormatter,
                 private modalService: NgbModal, 
                 private http: HttpClient,
-                private modalRef: NgbModalRef,
                 private route: ActivatedRoute,
                 private location: Location,
                 private httpService: HttpServices)

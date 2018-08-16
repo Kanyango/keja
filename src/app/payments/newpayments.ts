@@ -75,17 +75,7 @@ export class NewPaymentsComponent implements OnInit
            }
         );   
    }
-   creatExpense()
-   {
-      this.paymentsForm = this.fb.group({
-          title   : ['', Validators.required],
-          amount  : ['', Validators.required],
-          balance : ['', Validators.required],
-          house_no: ['', Validators.required],
-          amount_paid: ['', Validators.required],
-          month   : ['', Validators.required]
-        });
-   }
+
    
    getTenant()
    {

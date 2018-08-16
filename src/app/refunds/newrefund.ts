@@ -33,9 +33,9 @@ export class NewRefundComponent implements OnInit
    tenants: Tenant[];
    units: Unit[];
    
-   private refundUrl = 'http://localhost:8100/refund';
-    private tenantsUrl = 'http://localhost:8100/alltenants/'; 
-   private unitsUrl = 'http://localhost:8100/unit/';
+   private refundUrl = 'https://kejaserver.herokuapp.com/refund';
+    private tenantsUrl = 'https://kejaserver.herokuapp.com/alltenants/'; 
+   private unitsUrl = 'https://kejaserver.herokuapp.com/unit/';
    
    constructor(private fb: FormBuilder, private modalService: NgbModal, 
                     private http: HttpClient,

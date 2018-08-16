@@ -29,8 +29,8 @@ export class UnitModalComponent implements OnInit
     mypays: Payments[];
     tenant: Tenant;
     
-    tenantsUrl = 'http://localhost:8100/alltenants/';
-    private payUrl = 'http://localhost:8100/allpayments'; 
+    tenantsUrl = 'https://kejaserver.herokuapp.com/alltenants/';
+    private payUrl = 'https://kejaserver.herokuapp.com/allpayments'; 
     
     constructor(private modalService: NgbModal, private httpService: HttpServices, private route: ActivatedRoute,) {}
 

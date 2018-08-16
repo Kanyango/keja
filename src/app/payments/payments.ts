@@ -21,7 +21,7 @@ export class PaymentsComponent implements OnInit
     payments: Payments[];
     id = '';
     tenants: Tenant[];
-    private tenantsUrl = 'http://localhost:8100/alltenants/'; 
+    private tenantsUrl = 'https://kejaserver.herokuapp.com/alltenants/'; 
     
     constructor(private fb: FormBuilder, 
                  private http: HttpClient,

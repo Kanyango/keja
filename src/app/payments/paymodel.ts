@@ -4,7 +4,7 @@ export class Payments
     apartment = '';
     balance  = 0;
     amount_paid = '';
-    paymonth = '';
+    month = '';
     tenant = '';
     
 }

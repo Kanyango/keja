@@ -27,7 +27,7 @@ export class NewTenantsComponent implements OnInit
 {
    @Input() id: any;
    @Output('update') change: EventEmitter<any> = new EventEmitter<any>();
-   
+   modalRef: NgbModalRef;
    tenantForm: FormGroup;
    closeResult: string;
    units: Unit;
@@ -37,7 +37,6 @@ export class NewTenantsComponent implements OnInit
    
    constructor(private fb: FormBuilder, 
                private route: ActivatedRoute,
-               private modalRef: NgbModalRef,
                private ngbDateParserFormatter: NgbDateParserFormatter,
                private modalService: NgbModal, 
                private http: HttpClient, 

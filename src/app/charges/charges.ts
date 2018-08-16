@@ -21,7 +21,7 @@ export class ChargesComponent implements OnInit
     id = '';
     term = '';
     
-    private chargesUrl = 'http://localhost:8100/charges/'; 
+    private chargesUrl = 'https://kejaserver.herokuapp.com/charges/'; 
     charges: Array<Charges>;
     
     constructor(private fb: FormBuilder, 

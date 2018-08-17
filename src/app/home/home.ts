@@ -142,7 +142,7 @@ export class HomeComponent implements OnInit
                     console.log('Tenants',data);
                     for(let t =0; t < data.length; t++)
                         {
-                            if(data[t].status = 'active')
+                            if(data[t].status == 'active')
                                 {
                                     this.tenants.push(data[t]);
                                     

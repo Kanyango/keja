@@ -150,6 +150,8 @@ export class HomeComponent implements OnInit
                         }
                   this.tentact = this.tenants.length;
                  
+                  console.log('We are tenants', this.tenants);
+                 
                   console.log('Iam total tenants', this.tentact + ' total tenants' +  this.tenants.length);
                   
                    },

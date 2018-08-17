@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit
         this.httpService.getUnit(URL)
             .subscribe(
                (data: Apart) => {
-                 console.log(data);
+                 console.log('unit info', data);
                  this.apartment = data;
                  this.totunits = this.apartment.unitnames.length;
                  

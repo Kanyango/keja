@@ -84,7 +84,7 @@ export class HomeComponent implements OnInit
                  return Observable.throw(error);
                }
             );
-            console.log('Total UNits', this.totunits);
+            console.log('Total UNits', this.apartment.unitnames.length);
             console.log('Total UNits', this.apartment);
       
             this.getPayments();
@@ -150,8 +150,8 @@ export class HomeComponent implements OnInit
                         }
                   this.tentact = this.tenants.length;
                  
-                  console.log('Iam tenants', this.tenants);
-                  console.log('Iam totunits', this.totunits)
+                  console.log('Iam total tenants', this.tentact);
+                  
                    },
                error => {
                  console.error("Error saving food!");

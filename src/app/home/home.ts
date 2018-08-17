@@ -145,12 +145,12 @@ export class HomeComponent implements OnInit
                             if(data[t].status = 'active')
                                 {
                                     this.tenants.push(data[t]);
-                                   
-                                    this.tentact = this.tenants.length;
                                     
                                 }
                         }
-                  console.log('Iam tentact', this.tentact);
+                  this.tentact = this.tenants.length;
+                 
+                  console.log('Iam tenants', this.tenants);
                   console.log('Iam totunits', this.totunits)
                    },
                error => {

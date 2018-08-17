@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit
                (data: Apart) => {
                  console.log('unit info', data);
                  this.apartment = data;
-                 this.totunits = this.apartment.unitnames.length;
+                 this.totunits = data.unitnames.length;
                  
                  for(let i = 0; i < data.unitnames.length; i++)
                     {
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit
                     
                        // this.totunits += parseInt(data.units[i].unit_no)
                     }
-                    console.log(tot_rent);
+                    console.log('Total units', this.totunits + ' unitnames length ' +  data.unitnames.length);
                     
                     this.total_rent = tot_rent;
                     //console.log(this.total_rent);

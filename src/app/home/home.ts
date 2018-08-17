@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit
     id = '';
     option: any = {};
     apartment: Apart;
-    tenants: Tenant[];
+    tenants = [];
     charges: Charges[];
     maintains: Maintain[];
     

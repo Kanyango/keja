@@ -84,6 +84,7 @@ export class HomeComponent implements OnInit
                  return Observable.throw(error);
                }
             );
+            console.log('Total UNits', this.totunits);
             this.getPayments();
             this.getTenants();
             this.getExpenses();

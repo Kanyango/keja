@@ -150,7 +150,7 @@ export class HomeComponent implements OnInit
                         }
                   this.tentact = this.tenants.length;
                  
-                  console.log('Iam total tenants', this.tentact);
+                  console.log('Iam total tenants', this.tentact + ' total tenants' +  this.tenants.length);
                   
                    },
                error => {
